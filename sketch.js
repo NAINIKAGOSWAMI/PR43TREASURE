@@ -4,7 +4,6 @@ var back;
 
 function preload() {
  
-  
   bg= loadImage("aladdin_cave.jpg")
   //load image for the treasure background
   treasure= loadImage("treasure.jpg")
@@ -16,29 +15,28 @@ function setup() {
   createCanvas(1000,500);
   security = new Security();
   system = new System();
-  
-  
-  
 }
 
 function draw() {
   background(bg);
   clues();
   security.display();
-  textSize(20);
-  fill("white");
+  textSize(30);
+  fill("pink");
+  stroke("black")
+  strokeWeight(5)
   text("Score: " + score, 450, 50);
 // add code for changing the background to the treasure background
-background(back)
-  
 
   if(score === 3) {
     clear()
-    background(bg2)
+    background(back)
     fill("black")
-    textSize(40);
+    textSize(30);
     text("TREASURE UNLOCKED",250, 200);
   }
+    
+  
 
   drawSprites()
 }
